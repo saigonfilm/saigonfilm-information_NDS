@@ -338,10 +338,10 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 scrollToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                scrollToTopBtn.classList.add('opacity-100', 'translate-y-0');
+                scrollToTopBtn.classList.add('opacity-90', 'translate-y-0');
             } else {
                 scrollToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-                scrollToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                scrollToTopBtn.classList.remove('opacity-90', 'translate-y-0');
             }
         });
 

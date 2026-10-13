@@ -71,7 +71,12 @@
             box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.35), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
         section[id^="cat-"], #cat-goi-tai-tro {
-            scroll-margin-top: 175px;
+            scroll-margin-top: 24px;
+        }
+        @media (min-width: 768px) {
+            section[id^="cat-"], #cat-goi-tai-tro {
+                scroll-margin-top: 175px;
+            }
         }
 
         /* Theme transitions */
@@ -113,33 +118,39 @@
         }
 
         /* Sticky category bar */
+        html.light #categoryFilterBar,
         html.light .sticky.top-28 {
             background-color: rgba(255, 255, 255, 0.92);
             border-color: #e2e8f0;
         }
 
+        html.light #categoryFilterBar span.text-slate-400,
         html.light .sticky.top-28 span.text-slate-400 {
             color: #64748b;
         }
 
+        html.light #categoryFilterBar a,
         html.light .sticky.top-28 a {
             background-color: #f1f5f9;
             color: #334155;
             border: 1px solid #e2e8f0;
         }
 
+        html.light #categoryFilterBar a:hover,
         html.light .sticky.top-28 a:hover {
             background-color: #10b981;
             color: #ffffff;
             border-color: #10b981;
         }
 
+        html.light #categoryFilterBar a[href="#cat-goi-tai-tro"],
         html.light .sticky.top-28 a[href="#cat-goi-tai-tro"] {
             background-color: #fef3c7;
             color: #92400e;
             border-color: #fcd34d;
         }
 
+        html.light #categoryFilterBar a[href="#cat-goi-tai-tro"]:hover,
         html.light .sticky.top-28 a[href="#cat-goi-tai-tro"]:hover {
             background-color: #f59e0b;
             color: #ffffff;
@@ -292,7 +303,7 @@
 <body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
     <!-- TOP TICKER BAR -->
-    <div class="bg-brand-950 text-white text-xs py-2 px-4 border-b border-brand-800/60 sticky top-0 z-50">
+    <div class="bg-brand-950 text-white text-xs py-2 px-4 border-b border-brand-800/60 relative md:sticky md:top-0 z-50">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-3">
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-800 text-emerald-300 font-semibold text-[11px]">
@@ -316,7 +327,7 @@
     </div>
 
     <!-- MAIN NAVBAR -->
-    <header class="bg-slate-900/95 backdrop-blur-md border-b border-slate-800 sticky top-8 z-40">
+    <header class="bg-slate-900/95 backdrop-blur-md border-b border-slate-800 relative md:sticky md:top-8 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between min-h-[4.5rem] sm:h-24 py-2">
                 <!-- Brand Logo -->
@@ -332,10 +343,12 @@
                         <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
                         <span>Các Gói Tài Trợ</span>
                     </a>
+                    <!-- Tạm thời ẩn menu Đăng Ký Gói Danh Xưng theo yêu cầu
                     <a href="#cat-lien-he" id="navDangKyDanhXung" class="text-gold-400 hover:text-white hover:bg-amber-400/10 active:scale-95 px-3 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-1.5 group">
                         <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
                         <span>Đăng Ký Gói Danh Xưng</span>
                     </a>
+                    -->
                 </nav>
 
                 <!-- CTA Button -->
@@ -360,10 +373,12 @@
                     <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
                     <span class="truncate">Các Gói Tài Trợ</span>
                 </a>
+                <!-- Tạm thời ẩn menu Đăng Ký Gói Danh Xưng trên mobile theo yêu cầu
                 <a href="#cat-lien-he" id="navDangKyDanhXungMobile" class="flex-1 text-center justify-center text-gold-400 hover:text-white hover:bg-amber-400/10 active:scale-95 py-1.5 px-2 rounded-lg bg-slate-800/60 border border-amber-500/25 transition-all duration-200 flex items-center gap-1.5 group">
                     <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
                     <span class="truncate">Đăng Ký Gói Danh Xưng</span>
                 </a>
+                -->
             </div>
         </div>
     </header>
@@ -424,7 +439,7 @@
     </section>
 
     <!-- QUICK CATEGORY JUMP FILTER BAR -->
-    <div class="bg-slate-800/80 backdrop-blur-md border-b border-slate-700 py-3 sticky top-28 sm:top-32 z-30">
+    <div id="categoryFilterBar" class="bg-slate-800/80 backdrop-blur-md border-b border-slate-700 py-3 relative md:sticky md:top-28 sm:md:top-32 z-30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 text-xs font-bold">
                 <span class="text-slate-400 whitespace-nowrap mr-2 flex items-center gap-1">
@@ -973,8 +988,8 @@
                 </div>
             </div>
 
-            <!-- Lead Capture Form Banner -->
-            <div class="mt-8 p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 border border-emerald-600/40 shadow-2xl">
+            <!-- Lead Capture Form Banner (Tạm thời ẩn theo yêu cầu) -->
+            <div class="hidden mt-8 p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 border border-emerald-600/40 shadow-2xl">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-5 space-y-4">
                         <span class="px-3 py-1 rounded-md bg-emerald-900/80 text-emerald-300 text-xs font-bold uppercase">
@@ -1107,7 +1122,7 @@
 
     <!-- SCROLL TO TOP BUTTON -->
     <button type="button" id="scrollToTopBtn" aria-label="Cuộn lên đầu trang" title="Cuộn lên đầu trang"
-        class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white shadow-2xl opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 hover:scale-110 flex items-center justify-center focus:outline-none">
+        class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-emerald-600/90 hover:bg-emerald-600 backdrop-blur-sm active:scale-95 text-white shadow-2xl opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 hover:scale-110 hover:opacity-100 flex items-center justify-center focus:outline-none">
         <i data-lucide="chevron-up" class="w-6 h-6"></i>
     </button>
 
