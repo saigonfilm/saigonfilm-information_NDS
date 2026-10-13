@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NÔNG DÂN SỐ | Hồ Sơ Đề Án &amp; Chương Trình Truyền Hình VTV</title>
+    <meta name="description" content="Trang web chính thức giới thiệu chương trình truyền hình thực tế NÔNG DÂN SỐ - Công nghệ đồng hành, Nông dân vươn xa. Phát sóng trên VTV. Đơn vị sản xuất: Sài Gòn Phim.">
+
+    <!-- Theme Initializer (prevents flash of wrong theme) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('nds_theme');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.remove('dark');
+                document.documentElement.classList.add('light');
+            } else {
+                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('light');
+            }
+        })();
+    </script>
+
+    <!-- Google Fonts: Be Vietnam Pro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                            950: '#022c22',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        .slide-glow {
+            box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .slide-glow:hover {
+            box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.35), 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        section[id^="cat-"], #cat-goi-tai-tro {
+            scroll-margin-top: 175px;
+        }
+
+        /* Theme transitions */
+        body, header, section, main, footer, .player-thumb, #contactForm {
+            transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+        }
+
+        /* LIGHT MODE OVERRIDES */
+        html.light body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        html.light header {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-color: #e2e8f0;
+        }
+
+        html.light header a span.uppercase {
+            color: #0f172a;
+        }
+
+        html.light header nav a {
+            color: #475569;
+        }
+
+        html.light header nav a:hover {
+            color: #059669;
+        }
+
+        html.light #themeToggleBtn {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #334155;
+        }
+
+        html.light #themeToggleBtn:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Sticky category bar */
+        html.light .sticky.top-28 {
+            background-color: rgba(255, 255, 255, 0.92);
+            border-color: #e2e8f0;
+        }
+
+        html.light .sticky.top-28 span.text-slate-400 {
+            color: #64748b;
+        }
+
+        html.light .sticky.top-28 a {
+            background-color: #f1f5f9;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        html.light .sticky.top-28 a:hover {
+            background-color: #10b981;
+            color: #ffffff;
+            border-color: #10b981;
+        }
+
+        html.light .sticky.top-28 a[href="#cat-goi-tai-tro"] {
+            background-color: #fef3c7;
+            color: #92400e;
+            border-color: #fcd34d;
+        }
+
+        html.light .sticky.top-28 a[href="#cat-goi-tai-tro"]:hover {
+            background-color: #f59e0b;
+            color: #ffffff;
+            border-color: #f59e0b;
+        }
+
+        /* Hero carousel player section */
+        html.light section.bg-slate-950 {
+            background-color: #f1f5f9;
+            border-color: #e2e8f0;
+        }
+
+        html.light section.bg-slate-950 h1 {
+            color: #0f172a;
+        }
+
+        html.light #playerCounter {
+            background-color: #ffffff;
+            color: #047857;
+            border-color: #cbd5e1;
+        }
+
+        html.light #playerPrevBtn,
+        html.light #playerNextBtn {
+            background-color: #ffffff;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        html.light #playerPrevBtn:hover,
+        html.light #playerNextBtn:hover {
+            background-color: #f1f5f9;
+            color: #0f172a;
+        }
+
+        html.light #playerSlideContainer {
+            border-color: #cbd5e1;
+        }
+
+        html.light .player-thumb {
+            border-color: #cbd5e1;
+        }
+
+        /* Main sections & slide cards */
+        html.light main section {
+            border-color: #e2e8f0;
+        }
+
+        html.light main h2,
+        html.light main h3 {
+            color: #0f172a;
+        }
+
+        html.light main .bg-slate-800\/80,
+        html.light main .bg-slate-800\/90,
+        html.light main .bg-slate-800 {
+            background-color: #ffffff;
+            border-color: #e2e8f0;
+            box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        html.light main .text-slate-300,
+        html.light main .text-slate-400 {
+            color: #475569;
+        }
+
+        html.light main .text-slate-200 {
+            color: #1e293b;
+        }
+
+        html.light main .border-slate-800,
+        html.light main .border-slate-700,
+        html.light main .border-slate-700\/60,
+        html.light main .border-slate-700\/80 {
+            border-color: #e2e8f0;
+        }
+
+        html.light main .bg-slate-900 {
+            background-color: #f8fafc;
+            border-color: #e2e8f0;
+            color: #334155;
+        }
+
+        html.light main span.text-emerald-400,
+        html.light main div.text-emerald-400 {
+            color: #047857;
+        }
+
+        html.light main span.text-gold-400,
+        html.light main div.text-gold-400 {
+            color: #b45309;
+        }
+
+        /* Sponsorship section */
+        html.light #cat-goi-tai-tro .border-gold-500\/40,
+        html.light #cat-goi-tai-tro .border-gold-500\/60 {
+            border-color: #f59e0b;
+        }
+
+        html.light .from-slate-900.to-amber-950\/40 {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-color: #f59e0b;
+        }
+
+        html.light #cat-goi-tai-tro .border-cyan-500\/40 {
+            border-color: #06b6d4;
+        }
+
+        html.light #cat-goi-tai-tro .text-cyan-300 {
+            color: #0e7490;
+        }
+
+        /* Lead capture banner */
+        html.light .from-slate-900.via-brand-950.to-slate-900 {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #f0fdf4 100%);
+            border-color: #86efac;
+            box-shadow: 0 10px 30px -5px rgba(16, 185, 129, 0.1);
+        }
+
+        html.light .from-slate-900.via-brand-950.to-slate-900 h3 {
+            color: #0f172a;
+        }
+
+        html.light #contactForm {
+            background-color: #ffffff;
+            border-color: #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+        }
+
+        html.light #contactForm label {
+            color: #475569;
+        }
+
+        html.light #contactForm input,
+        html.light #contactForm select,
+        html.light #contactForm textarea {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
+
+        html.light #contactForm input:focus,
+        html.light #contactForm select:focus,
+        html.light #contactForm textarea:focus {
+            border-color: #10b981;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- TOP TICKER BAR -->
+    <div class="bg-brand-950 text-white text-xs py-2 px-4 border-b border-brand-800/60 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-brand-800 text-emerald-300 font-semibold text-[11px]">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    PHÁT SÓNG TRÊN VTV – ĐÀI TRUYỀN HÌNH VIỆT NAM
+                </span>
+                <span class="hidden md:inline text-slate-400">|</span>
+                <span class="hidden md:inline text-slate-300 text-xs">Chủ nhật hàng tuần • 15 phút/tập • 52 tập/năm</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-medium">
+                <a href="tel:0918995991" class="flex items-center gap-1.5 hover:text-emerald-300 transition-colors text-gold-400 font-bold">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+                    <span>Hotline:&nbsp;0918.995.991</span>
+                </a>
+                <a href="assets/NONG_DAN_SO.pdf" download class="flex items-center gap-1 hover:text-emerald-300 transition-colors bg-white/10 px-2 py-0.5 rounded text-[11px]">
+                    <i data-lucide="download" class="w-3 h-3"></i>
+                    <span>Tải PDF (71MB)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="bg-slate-900/95 backdrop-blur-md border-b border-slate-800 sticky top-8 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between min-h-[4.5rem] sm:h-24 py-2">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-2 sm:gap-3.5 group shrink-0">
+                    <img src="assets/images/logo_nong_dan_so_transparent.png" alt="Logo Nông Dân Số" class="h-11 sm:h-16 w-auto object-contain filter drop-shadow group-hover:scale-105 transition-transform">
+                    <span class="text-base sm:text-2xl font-black tracking-tight text-white group-hover:text-emerald-400 transition-colors uppercase whitespace-nowrap">NÔNG DÂN SỐ</span>
+                </a>
+
+                <!-- Desktop Category Nav -->
+                <nav class="hidden md:flex items-center gap-5 text-xs font-bold text-slate-300">
+                    <!-- <a href="#cat-tong-quan" class="hover:text-emerald-400 transition-colors">Tổng Quan</a> -->
+                    <a href="#cat-goi-tai-tro" class="text-gold-400 hover:text-white hover:bg-amber-400/10 active:scale-95 px-3 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-1.5 group">
+                        <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
+                        <span>Các Gói Tài Trợ</span>
+                    </a>
+                    <a href="#cat-lien-he" id="navDangKyDanhXung" class="text-gold-400 hover:text-white hover:bg-amber-400/10 active:scale-95 px-3 py-1.5 rounded-lg transition-all duration-200 flex items-center gap-1.5 group">
+                        <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
+                        <span>Đăng Ký Gói Danh Xưng</span>
+                    </a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="flex items-center gap-2 shrink-0">
+                    <button type="button" id="themeToggleBtn" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all flex items-center justify-center shadow-sm" aria-label="Chuyển chế độ sáng / tối" title="Chuyển chế độ sáng / tối">
+                        <i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+                    </button>
+                    <button type="button" id="toggleViewerBtn" class="inline-flex items-center justify-center gap-1.5 p-2 sm:px-3 sm:py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md transition-all active:scale-95" aria-label="Chế độ trình chiếu" title="Chế độ trình chiếu">
+                        <i data-lucide="maximize" class="w-4 h-4 sm:w-3.5 sm:h-3.5"></i>
+                        <span class="hidden sm:inline">Chế Độ Trình Chiếu</span>
+                    </button>
+                    <!-- <a href="#cat-lien-he" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold-500 hover:bg-gold-600 text-slate-950 text-xs font-black transition-all">
+                        <i data-lucide="handshake" class="w-3.5 h-3.5"></i>
+                        <span>Đồng Hành</span>
+                    </a> -->
+                </div>
+            </div>
+
+            <!-- Mobile Sub-Nav Row (Visible on Mobile < md) -->
+            <div class="flex md:hidden items-center justify-between gap-2 pb-2.5 pt-1 border-t border-slate-800/80 text-[11px] font-bold">
+                <a href="#cat-goi-tai-tro" class="flex-1 text-center justify-center text-gold-400 hover:text-white hover:bg-amber-400/10 active:scale-95 py-1.5 px-2 rounded-lg bg-slate-800/60 border border-amber-500/25 transition-all duration-200 flex items-center gap-1.5 group">
+                    <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="truncate">Các Gói Tài Trợ</span>
+                </a>
+                <a href="#cat-lien-he" id="navDangKyDanhXungMobile" class="flex-1 text-center justify-center text-gold-400 hover:text-white hover:bg-amber-400/10 active:scale-95 py-1.5 px-2 rounded-lg bg-slate-800/60 border border-amber-500/25 transition-all duration-200 flex items-center gap-1.5 group">
+                    <i data-lucide="crown" class="w-3.5 h-3.5 text-amber-400 group-hover:text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="truncate">Đăng Ký Gói Danh Xưng</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- INTERACTIVE SLIDE PRESENTATION HERO (CAROUSEL PLAYER) -->
+    <section class="relative bg-slate-950 py-8 border-b border-slate-800 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4">
+                <div>
+                    <!-- <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-950 border border-emerald-700 text-emerald-400 text-xs font-bold">
+                        <i data-lucide="presentation" class="w-3.5 h-3.5"></i>
+                        TRÌNH CHIẾU TRỰC TIẾP HỒ SƠ ĐỀ ÁN (25 SLIDE)
+                    </span> -->
+                    <h1 class="text-xl sm:text-2xl font-black text-white mt-1">
+                        GIỚI THIỆU "NÔNG DÂN SỐ"
+                    </h1>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                    <span id="playerCounter" class="px-3 py-1.5 rounded-lg bg-slate-800 text-emerald-400 font-bold border border-slate-700">Slide 1 / 25</span>
+                    <button type="button" id="playerPrevBtn" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white transition-colors" title="Slide trước" aria-label="Slide trước">
+                        <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                    </button>
+                    <button type="button" id="playerNextBtn" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-white transition-colors" title="Slide tiếp" aria-label="Slide tiếp">
+                        <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                    </button>
+                    <button type="button" id="playerFullscreenBtn" class="p-2 rounded-lg bg-brand-700 hover:bg-brand-600 text-white transition-colors" title="Phóng to toàn màn hình" aria-label="Phóng to toàn màn hình">
+                        <i data-lucide="expand" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Slide Player Display -->
+            <div class="relative group rounded-2xl overflow-hidden border border-slate-700/80 bg-black shadow-2xl cursor-pointer" id="playerSlideContainer">
+                <img id="playerSlideImg" src="assets/slides/slide_01.jpg" alt="Slide Nông Dân Số" class="w-full aspect-[16/9] object-contain bg-black">
+
+                <!-- Overlay Controls: Slide Title on Top-Left (Ẩn trên mobile khi ở ngoài, chỉ hiện trên desktop) -->
+                <div class="absolute inset-x-0 top-0 pt-1 sm:pt-1.5 px-2 sm:px-3.5 bg-gradient-to-b from-black/60 via-transparent to-transparent sm:from-black/80 sm:via-black/20 flex items-center justify-end sm:justify-between text-xs text-white opacity-95 group-hover:opacity-100 transition-opacity pointer-events-none">
+                    <div class="pointer-events-auto hidden sm:block">
+                        <span id="playerSlideTitle" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-950/90 backdrop-blur-md border border-slate-700/80 font-bold text-xs text-emerald-300 shadow-md">
+                            1. Trang bìa - Công nghệ đồng hành, Nông dân vươn xa
+                        </span>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-md bg-white/20 text-[10px] sm:text-[11px] font-semibold backdrop-blur-sm pointer-events-auto flex items-center gap-1 shrink-0">
+                        <i data-lucide="zoom-in" class="w-3.5 h-3.5 sm:w-3 sm:h-3"></i>
+                        <span class="hidden sm:inline">Click để Zoom</span>
+                        <span class="sm:hidden">Zoom</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Slide Thumbnail Strip -->
+            <div class="mt-4 flex gap-2 overflow-x-auto pb-2 scrollbar-thin" id="thumbStrip">
+                <!-- 25 thumbs dynamically rendered -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUICK CATEGORY JUMP FILTER BAR -->
+    <div class="bg-slate-800/80 backdrop-blur-md border-b border-slate-700 py-3 sticky top-28 sm:top-32 z-30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5 text-xs font-bold">
+                <span class="text-slate-400 whitespace-nowrap mr-2 flex items-center gap-1">
+                    <i data-lucide="filter" class="w-3.5 h-3.5"></i> Danh mục:
+                </span>
+                <a href="#cat-tong-quan" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    1. Bìa &amp; Bối cảnh (Slide 1-2)
+                </a>
+                <a href="#cat-muc-tieu" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    2. Mục tiêu (Slide 3)
+                </a>
+                <a href="#cat-format" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    3. Format &amp; Sài Gòn Phim (Slide 4-5)
+                </a>
+                <a href="#cat-diem-noi-bat" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    4. Điểm khác biệt &amp; Công nghệ (Slide 6-9)
+                </a>
+                <a href="#cat-he-sinh-thai" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    5. Hệ sinh thái &amp; Khán giả (Slide 10-13)
+                </a>
+                <a href="#cat-gia-tri" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    6. Giá trị đối tác (Slide 14-16)
+                </a>
+                <a href="#cat-goi-tai-tro" class="px-3 py-1.5 rounded-lg bg-gold-600/30 border border-gold-500/50 hover:bg-gold-500 text-gold-300 hover:text-slate-950 whitespace-nowrap transition-colors">
+                    7. Các Gói Tài Trợ (Slide 17-21)
+                </a>
+                <a href="#cat-hinh-thuc-tai-tro" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    8. 8 Hình thức linh hoạt (Slide 22-23)
+                </a>
+                <a href="#cat-lien-he" class="px-3 py-1.5 rounded-lg bg-slate-700 hover:bg-emerald-600 text-slate-200 hover:text-white whitespace-nowrap transition-colors">
+                    9. Cam kết &amp; Liên hệ (Slide 24-25)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN BODY: SHOWCASE TOÀN BỘ 25 SLIDE THEO TỪNG DANH MỤC TRỰC QUAN -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-12 space-y-20">
+
+        <!-- DANH MỤC 1: BÌA & BỐI CẢNH (SLIDE 1 & SLIDE 2) -->
+        <section id="cat-tong-quan" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 01</span>
+                    <h2 class="text-2xl font-black text-white">Trang Bìa &amp; Bối Cảnh Chương Trình</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 01 – Slide 02</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Slide 1 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-3 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(1)">
+                        <img src="assets/slides/slide_01.jpg" alt="Slide 1" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold flex items-center gap-1">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 01
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs font-bold">
+                        <span class="text-emerald-400">1. TRANG BÌA ĐỀ ÁN</span>
+                        <span class="text-slate-400">Phát sóng trên VTV</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Khẩu hiệu chính thức: <strong>"Công nghệ đồng hành – Nông dân vươn xa"</strong>. Đơn vị phát sóng: Kênh Đài Truyền hình Việt Nam. Website: truyenhinhnongnghiep.vn.
+                    </p>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-3 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(2)">
+                        <img src="assets/slides/slide_02.jpg" alt="Slide 2" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold flex items-center gap-1">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 02
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs font-bold">
+                        <span class="text-emerald-400">2. BỐI CẢNH &amp; SỰ CẦN THIẾT</span>
+                        <span class="text-slate-400">Lý do ra đời</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Thu hẹp khoảng cách giữa công nghệ cao và người sản xuất; giúp nông dân chuyển đổi từ sản xuất thuần túy sang làm kinh tế số hiệu quả.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 2: MỤC TIÊU CHIẾN LƯỢC (SLIDE 3) -->
+        <section id="cat-muc-tieu" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 02</span>
+                    <h2 class="text-2xl font-black text-white">Mục Tiêu Chiến Lược Của Chương Trình</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 03</span>
+            </div>
+
+            <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-5 space-y-4">
+                <div class="relative rounded-xl overflow-hidden cursor-pointer max-w-4xl mx-auto group" onclick="openLightbox(3)">
+                    <img src="assets/slides/slide_03.jpg" alt="Slide 3 - Mục tiêu chương trình" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform shadow-xl">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                        <span class="px-4 py-2 rounded-lg bg-emerald-500 text-white text-xs font-bold flex items-center gap-2">
+                            <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 03
+                        </span>
+                    </div>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs pt-2">
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-700/60 text-slate-300">
+                        • Phổ biến kiến thức chuyển đổi số
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-700/60 text-slate-300">
+                        • Giới thiệu mô hình nhân rộng
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-700/60 text-slate-300">
+                        • Kết nối doanh nghiệp &amp; HTX
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-700/60 text-slate-300">
+                        • Thúc đẩy ứng dụng KHCN
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-700/60 text-slate-300">
+                        • Xây dựng chuỗi giá trị nông sản
+                    </div>
+                    <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-700/60 text-slate-300">
+                        • Nông nghiệp sinh thái bền vững
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 3: ĐỊNH DẠNG & ĐƠN VỊ THỰC HIỆN (SLIDE 4 & SLIDE 5) -->
+        <section id="cat-format" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 03</span>
+                    <h2 class="text-2xl font-black text-white">Định Dạng Format, Đơn Vị Sản Xuất &amp; Lịch Sóng VTV</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 04 – Slide 05</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Slide 4 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-3 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(4)">
+                        <img src="assets/slides/slide_04.jpg" alt="Slide 4" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold flex items-center gap-1">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 04
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs font-bold">
+                        <span class="text-emerald-400">4. ĐƠN VỊ SẢN XUẤT &amp; CỐ VẤN</span>
+                        <span class="text-slate-400">Sài Gòn Phim</span>
+                    </div>
+                    <p class="text-xs text-slate-300">
+                        Đơn vị sản xuất: <strong>Công ty CP Công nghệ Truyền hình Sài Gòn Phim</strong>. Chuyên gia đồng hành: <strong>TS. Lê Hữu Quang</strong> (Phó Giám đốc phụ trách Trung tâm Đào tạo Nông dân, Trường Chính sách công và PTNT).
+                    </p>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-3 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(5)">
+                        <img src="assets/slides/slide_05.jpg" alt="Slide 5" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold flex items-center gap-1">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 05
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs font-bold">
+                        <span class="text-emerald-400">5. KHUNG GIỜ PHÁT SÓNG VTV</span>
+                        <span class="text-slate-400">Lịch trình phát sóng</span>
+                    </div>
+                    <p class="text-xs text-slate-300">
+                        Đài Truyền hình Việt Nam (VTV) • <strong>01 tập/tuần (52 tập/năm)</strong> • Thời lượng <strong>15 phút/tập</strong> • Khung giờ phát sóng vào <strong>Chủ nhật hằng tuần</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 4: ĐIỂM KHÁC BIỆT & ĐỘT PHÁ CÔNG NGHỆ (SLIDE 6, 7, 8, 9) -->
+        <section id="cat-diem-noi-bat" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 04</span>
+                    <h2 class="text-2xl font-black text-white">Điểm Khác Biệt &amp; Đột Phá Công Nghệ</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 06 – Slide 09</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Slide 6 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(6)">
+                        <img src="assets/slides/slide_06.jpg" alt="Slide 6" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 06</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">6. TRUYỀN HÌNH ỨNG DỤNG THỰC TIỄN</div>
+                    <p class="text-xs text-slate-300">Mỗi tập phát sóng đều mang lại kiến thức người xem có thể áp dụng được ngay vào trang trại.</p>
+                </div>
+
+                <!-- Slide 7 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(7)">
+                        <img src="assets/slides/slide_07.jpg" alt="Slide 7" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 07</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">7. TRẢI NGHIỆM THỰC TẾ &amp; ĐỒ HỌA 3D/AI</div>
+                    <p class="text-xs text-slate-300">Ghi hình tại hiện trường, cố vấn giải đáp trực tiếp, kết hợp công nghệ 3D và AI mô phỏng quy trình.</p>
+                </div>
+
+                <!-- Slide 8 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(8)">
+                        <img src="assets/slides/slide_08.jpg" alt="Slide 8" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 08</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">8. GIẢI PHÁP MỚI &amp; TÍCH HỢP QR CODE</div>
+                    <p class="text-xs text-slate-300">Kết nối doanh nghiệp với người dùng cuối, tích hợp mã QR tương tác trực tiếp trên sóng truyền hình.</p>
+                </div>
+
+                <!-- Slide 9 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(9)">
+                        <img src="assets/slides/slide_09.jpg" alt="Slide 9" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 09</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">9. NỀN TẢNG KẾT NỐI BỀN VỮNG</div>
+                    <p class="text-xs text-slate-300">Nông Dân Số không chỉ là chương trình truyền hình mà là một nền tảng chuyển đổi số toàn diện cho nông nghiệp Việt Nam.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 5: HỆ SINH THÁI SỐ & KHÁN GIẢ MỤC TIÊU (SLIDE 10, 11, 12, 13) -->
+        <section id="cat-he-sinh-thai" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 05</span>
+                    <h2 class="text-2xl font-black text-white">Hệ Sinh Thái Truyền Thông &amp; Khán Giả Mục Tiêu</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 10 – Slide 13</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <!-- Slide 10 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(10)">
+                        <img src="assets/slides/slide_10.jpg" alt="Slide 10" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 10</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">10. VÌ SAO DOANH NGHIỆP NÊN ĐỒNG HÀNH?</div>
+                    <p class="text-xs text-slate-300">Cơ hội truyền thông và đầu tư hiệu quả vào khách hàng mục tiêu.</p>
+                </div>
+
+                <!-- Slide 11 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(11)">
+                        <img src="assets/slides/slide_11.jpg" alt="Slide 11" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 11</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">11. CẦU NỐI GIÁ TRỊ LÂU DÀI</div>
+                    <p class="text-xs text-slate-300">Hệ sinh thái kết nối Doanh nghiệp - Chuyên gia - Hợp tác xã - Nông dân.</p>
+                </div>
+
+                <!-- Slide 12 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(12)">
+                        <img src="assets/slides/slide_12.jpg" alt="Slide 12" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 12</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">12. ĐỐI TƯỢNG KHÁN GIẢ MỤC TIÊU</div>
+                    <p class="text-xs text-slate-300">Nông dân sản xuất hàng hóa, chủ trang trại, hợp tác xã, doanh nghiệp xuất khẩu, viện trường.</p>
+                </div>
+
+                <!-- Slide 13 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(13)">
+                        <img src="assets/slides/slide_13.jpg" alt="Slide 13" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 13</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">13. HỆ SINH THÁI ĐA NỀN TẢNG</div>
+                    <p class="text-xs text-slate-300">Phủ sóng đa chiều: VTV, YouTube (Full &amp; Shorts), Facebook, TikTok, Website, Sàn TMĐT.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 6: GIÁ TRỊ DOANH NGHIỆP NHẬN ĐƯỢC (SLIDE 14, 15, 16) -->
+        <section id="cat-gia-tri" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 06</span>
+                    <h2 class="text-2xl font-black text-white">Lợi Ích Doanh Nghiệp &amp; Nhóm Ngành Phù Hợp</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 14 – Slide 16</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Slide 14 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(14)">
+                        <img src="assets/slides/slide_14.jpg" alt="Slide 14" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 14</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">14. GIÁ TRỊ NHẬN ĐƯỢC</div>
+                    <p class="text-xs text-slate-300">Nhận diện thương hiệu, tiếp cận đúng khách hàng, trình diễn sản phẩm thực tế, kết nối trực tiếp.</p>
+                </div>
+
+                <!-- Slide 15 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(15)">
+                        <img src="assets/slides/slide_15.jpg" alt="Slide 15" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 15</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">15. DOANH NGHIỆP PHÙ HỢP</div>
+                    <p class="text-xs text-slate-300">Phân bón, BVTV, máy móc, drone, IoT, năng lượng tái tạo, ngân hàng, bảo hiểm, logistics, xuất khẩu.</p>
+                </div>
+
+                <!-- Slide 16 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(16)">
+                        <img src="assets/slides/slide_16.jpg" alt="Slide 16" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 16</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">16. THÔNG ĐIỆP ĐỒNG HÀNH</div>
+                    <p class="text-xs text-slate-300">"Đầu tư cho tri thức, công nghệ và tương lai của nền nông nghiệp Việt Nam bền vững".</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 7: CÁC GÓI ĐỒNG HÀNH TÀI TRỢ (SLIDE 17, 18, 19, 20, 21) -->
+        <section id="cat-goi-tai-tro" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-gold-500/60 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Danh Mục Trọng Tâm 07</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-2">
+                        <i data-lucide="gem" class="w-6 h-6 text-gold-400"></i>
+                        Các Gói Đồng Hành Tài Trợ Chi Tiết
+                    </h2>
+                </div>
+                <span class="text-xs text-gold-300 font-bold">Slide 17 – Slide 21</span>
+            </div>
+
+            <!-- Slide 17: Giới thiệu mô hình tài trợ -->
+            <div class="bg-slate-800/90 rounded-2xl overflow-hidden border border-gold-500/40 p-4 group">
+                <div class="relative rounded-xl overflow-hidden cursor-pointer max-w-4xl mx-auto" onclick="openLightbox(17)">
+                    <img src="assets/slides/slide_17.jpg" alt="Slide 17 - Các gói tài trợ" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform shadow-2xl">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                        <span class="px-4 py-2 rounded-lg bg-gold-500 text-slate-950 text-xs font-black flex items-center gap-2">
+                            <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 17 (Tổng quan gói tài trợ)
+                        </span>
+                    </div>
+                </div>
+                <div class="max-w-4xl mx-auto flex items-center justify-between text-xs font-bold pt-3 border-t border-slate-700/60 mt-3">
+                    <span class="text-gold-400">17. TỔNG QUAN CÁC GÓI ĐỒNG HÀNH TÀI TRỢ</span>
+                    <span class="text-slate-400">Đồng hành &amp; Lan tỏa</span>
+                </div>
+            </div>
+
+            <!-- Slide 18: Title Sponsor (Nhà tài trợ danh xưng) -->
+            <div class="bg-gradient-to-br from-slate-900 to-amber-950/40 rounded-2xl overflow-hidden border-2 border-gold-500 p-5 shadow-2xl space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="px-3 py-1 rounded-full bg-gold-500 text-slate-950 text-xs font-black uppercase tracking-wider">
+                        ★ ĐỘC QUYỀN THEO NGÀNH HÀNG
+                    </span>
+                    <span class="text-sm font-black text-gold-400">MỨC TÀI TRỢ: TỪ 2 TỶ ĐỒNG TRỞ LÊN</span>
+                </div>
+                <div class="text-xs font-bold text-gold-400">18. NHÀ TÀI TRỢ DANH XƯNG (TITLE SPONSOR)</div>
+                <div class="relative rounded-xl overflow-hidden cursor-pointer max-w-4xl mx-auto group" onclick="openLightbox(18)">
+                    <img src="assets/slides/slide_18.jpg" alt="Slide 18 - Nhà tài trợ danh xưng" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform shadow-xl">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                        <span class="px-4 py-2 rounded-lg bg-gold-500 text-slate-950 text-xs font-black flex items-center gap-2">
+                            <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 18 (Quyền lợi Danh xưng)
+                        </span>
+                    </div>
+                </div>
+                <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                    <p class="text-xs text-slate-300">
+                        Quyền lợi tối cao: Tên doanh nghiệp xuất hiện trên Opening, Ending, Backdrop, Trailer, Logo xuyên suốt VTV, 2 TVC 30s, 04 chuyên đề riêng.
+                    </p>
+                    <a href="#cat-lien-he" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-600 text-slate-950 font-black text-xs whitespace-nowrap shadow-md">
+                        Đăng ký Gói Danh Xưng
+                    </a>
+                </div>
+            </div>
+
+            <!-- Slide 19: Kim Cương -->
+            <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-cyan-500/40 p-5 space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="px-3 py-1 rounded-full bg-cyan-600 text-white text-xs font-black uppercase">
+                        GÓI CHIẾN LƯỢC TOÀN QUỐC
+                    </span>
+                    <span class="text-sm font-black text-cyan-300">MỨC TÀI TRỢ: KHOẢNG 1,5 TỶ ĐỒNG/NĂM</span>
+                </div>
+                <div class="text-xs font-bold text-cyan-300">19. NHÀ TÀI TRỢ KIM CƯƠNG (DIAMOND SPONSOR)</div>
+                <div class="relative rounded-xl overflow-hidden cursor-pointer max-w-4xl mx-auto group" onclick="openLightbox(19)">
+                    <img src="assets/slides/slide_19.jpg" alt="Slide 19 - Nhà tài trợ Kim Cương" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform shadow-xl">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                        <span class="px-4 py-2 rounded-lg bg-cyan-500 text-white text-xs font-bold flex items-center gap-2">
+                            <i data-lucide="zoom-in" class="w-4 h-4"></i> Phóng to Slide 19 (Nhà tài trợ Kim Cương)
+                        </span>
+                    </div>
+                </div>
+                <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                    <p class="text-xs text-slate-300">
+                        Hoặc 30 triệu đồng/tập × 52 tập. Quyền lợi: TVC 30 giây, Logo Opening &amp; Ending, MC giới thiệu, QR Code, Livestream và gian trưng bày sản phẩm.
+                    </p>
+                    <a href="#cat-lien-he" class="px-5 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs whitespace-nowrap shadow-md">
+                        Đăng ký Gói Kim Cương
+                    </a>
+                </div>
+            </div>
+
+            <!-- Slide 20 & Slide 21: Vàng, Bạc, Đồng Hành -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Slide 20 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-3 group hover:border-gold-400 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(20)">
+                        <img src="assets/slides/slide_20.jpg" alt="Slide 20" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-gold-500 text-slate-950 text-xs font-bold">Zoom Slide 20</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs font-bold">
+                        <span class="text-gold-400">20. TÀI TRỢ VÀNG &amp; BẠC</span>
+                        <span class="text-slate-400">300 Tr – 900 Tr</span>
+                    </div>
+                    <p class="text-xs text-slate-300">
+                        <strong>Tài trợ Vàng:</strong> 700 - 900 triệu (TVC 15s). <strong>Tài trợ Bạc:</strong> 300 - 500 triệu (TVC 10s).
+                    </p>
+                </div>
+
+                <!-- Slide 21 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-3 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(21)">
+                        <img src="assets/slides/slide_21.jpg" alt="Slide 21" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 21</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between text-xs font-bold">
+                        <span class="text-emerald-400">21. NHÀ ĐỒNG HÀNH</span>
+                        <span class="text-slate-400">Theo Chuyên Đề / Tập</span>
+                    </div>
+                    <p class="text-xs text-slate-300">
+                        Linh hoạt tài trợ bằng tiền mặt, hiện vật, dịch vụ, thiết bị, quà tặng hoặc máy móc giải pháp kỹ thuật.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 8: HÌNH THỨC TÀI TRỢ LINH HOẠT (SLIDE 22 & SLIDE 23) -->
+        <section id="cat-hinh-thuc-tai-tro" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 08</span>
+                    <h2 class="text-2xl font-black text-white">8 Hình Thức Tài Trợ Linh Hoạt</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 22 – Slide 23</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Slide 22 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(22)">
+                        <img src="assets/slides/slide_22.jpg" alt="Slide 22" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 22</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">22. CÁC HÌNH THỨC TÀI TRỢ LINH HOẠT</div>
+                    <p class="text-xs text-slate-300">Mô hình tài trợ mở cho phép tối ưu chi phí và bám sát chiến lược truyền thông của doanh nghiệp.</p>
+                </div>
+
+                <!-- Slide 23 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(23)">
+                        <img src="assets/slides/slide_23.jpg" alt="Slide 23" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 23</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">23. CHI TIẾT 8 HÌNH THỨC TÀI TRỢ</div>
+                    <p class="text-xs text-slate-300">Tài trợ kinh phí, vật tư, máy móc, chuyển đổi số, quà tặng, mô hình trình diễn, chuyên đề, ngày hội nông dân số.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DANH MỤC 9: CAM KẾT & LIÊN HỆ ĐỒNG HÀNH (SLIDE 24 & SLIDE 25) -->
+        <section id="cat-lien-he" class="scroll-mt-40 space-y-6 pt-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Danh Mục 09</span>
+                    <h2 class="text-2xl font-black text-white">Cam Kết Của Ban Tổ Chức &amp; Thông Tin Liên Hệ</h2>
+                </div>
+                <span class="text-xs text-slate-400">Slide 24 – Slide 25</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Slide 24 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(24)">
+                        <img src="assets/slides/slide_24.jpg" alt="Slide 24" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 24</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">24. CAM KẾT MINH BẠCH &amp; PHÁP LÝ</div>
+                    <p class="text-xs text-slate-300">Cam kết thực hiện nghiêm túc quy định của Đài Truyền hình Việt Nam, Luật Quảng cáo, Luật Báo chí.</p>
+                </div>
+
+                <!-- Slide 25 -->
+                <div class="bg-slate-800/80 rounded-2xl overflow-hidden border border-slate-700 p-4 space-y-2 group hover:border-emerald-500 transition-all">
+                    <div class="relative rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox(25)">
+                        <img src="assets/slides/slide_25.jpg" alt="Slide 25" class="w-full aspect-[16/9] object-cover group-hover:scale-102 transition-transform">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                            <span class="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-xs font-bold">Zoom Slide 25</span>
+                        </div>
+                    </div>
+                    <div class="text-xs font-bold text-emerald-400">25. LỜI NGỎ &amp; THÔNG TIN LIÊN HỆ</div>
+                    <p class="text-xs text-slate-300">Đại diện BTC: Ông Nguyễn Văn Chung (0918.995.991) • truyenhinhnongnghiepvn@gmail.com</p>
+                </div>
+            </div>
+
+            <!-- Lead Capture Form Banner -->
+            <div class="mt-8 p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-brand-950 to-slate-900 border border-emerald-600/40 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="px-3 py-1 rounded-md bg-emerald-900/80 text-emerald-300 text-xs font-bold uppercase">
+                            Đồng Hành Cùng Chương Trình
+                        </span>
+                        <h3 class="text-2xl font-black text-white">Đăng Ký Nhận Hồ Sơ &amp; Tư Vấn Chi Tiết</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Quý Doanh nghiệp, Hợp tác xã hoặc Đơn vị cung cấp giải pháp công nghệ mong muốn đồng hành cùng chương trình, xin vui lòng gửi thông tin hoặc liên hệ trực tiếp:
+                        </p>
+                        <div class="pt-2 space-y-2 text-xs">
+                            <div class="flex items-center gap-2 text-gold-400 font-bold">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                                <span>Hotline: 0918.995.991 (Ông Nguyễn Văn Chung)</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-300">
+                                <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
+                                <span>truyenhinhnongnghiepvn@gmail.com</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-slate-300">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+                                <span>1/5E1, Ngô Tất Tố, P. Thạnh Mỹ Tây, TP.HCM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <form id="contactForm" class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-850 p-5 rounded-2xl border border-slate-800">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-400 mb-1">Tên đơn vị / Doanh nghiệp *</label>
+                                <input type="text" required placeholder="Tên công ty" class="w-full px-3 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-xs focus:border-emerald-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-400 mb-1">Người liên hệ *</label>
+                                <input type="text" required placeholder="Họ và tên" class="w-full px-3 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-xs focus:border-emerald-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-400 mb-1">Số điện thoại *</label>
+                                <input type="tel" required placeholder="Số điện thoại" class="w-full px-3 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-xs focus:border-emerald-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-400 mb-1">Gói quan tâm</label>
+                                <select id="sponsorPackageSelect" class="w-full px-3 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-xs focus:border-emerald-500 focus:outline-none">
+                                    <option>Nhà tài trợ Danh xưng (Từ 2 Tỷ)</option>
+                                    <option>Nhà tài trợ Kim Cương (~1,5 Tỷ)</option>
+                                    <option>Nhà tài trợ Vàng (700-900 Tr)</option>
+                                    <option>Nhà tài trợ Bạc (300-500 Tr)</option>
+                                    <option>Nhà đồng hành linh hoạt</option>
+                                    <option>Mô hình giới thiệu sản phẩm</option>
+                                </select>
+                            </div>
+                            <div class="sm:col-span-2">
+                                <label class="block text-[11px] font-semibold text-slate-400 mb-1">Ghi chú thêm</label>
+                                <textarea rows="2" placeholder="Ghi chú mong muốn..." class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white text-xs focus:border-emerald-500 focus:outline-none"></textarea>
+                            </div>
+                            <div class="sm:col-span-2 pt-1">
+                                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs shadow-lg transition-all">
+                                    Gửi Thông Tin Đăng Ký Đồng Hành
+                                </button>
+                            </div>
+                        </form>
+                        <div id="formSuccessNotice" class="hidden p-4 rounded-xl bg-emerald-900/60 border border-emerald-500 text-emerald-200 text-xs text-center font-medium mt-3">
+                            Cảm ơn quý đơn vị! Thông tin đã được ghi nhận. Ban Tổ Chức sẽ liên hệ lại trong thời gian sớm nhất!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex flex-col justify-between py-3 px-1 sm:p-6 transition-all">
+        <!-- Top bar -->
+        <div class="flex items-center justify-between text-white max-w-7xl mx-auto w-full px-3 sm:px-0 pb-2 border-b border-white/10">
+            <div class="flex items-center gap-3">
+                <span id="lightboxCounter" class="text-sm font-bold text-emerald-400">Trang 1 / 25</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a id="lightboxDownloadLink" href="#" download class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">Tải slide này</span>
+                </a>
+                <button type="button" id="closeLightboxBtn" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Đóng">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Image Stage: 2 mũi tên sát mép màn hình, không che chữ slide -->
+        <div class="relative flex-1 flex items-center justify-center my-2 sm:my-3 max-w-6xl mx-auto w-full px-1 sm:px-14">
+            <button type="button" id="prevSlideBtn" class="absolute left-0 sm:-left-2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-r-full sm:rounded-full bg-black/75 sm:bg-white/10 hover:bg-black/90 sm:hover:bg-white/30 text-white backdrop-blur-md border-y border-r sm:border border-white/20 transition-all flex items-center justify-center shadow-2xl active:scale-95" title="Slide trước" aria-label="Slide trước">
+                <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6 -ml-0.5 sm:ml-0"></i>
+            </button>
+
+            <img id="lightboxImg" src="assets/slides/slide_01.jpg" alt="Slide view" class="max-h-[78vh] sm:max-h-[82vh] max-w-[calc(100%-4.25rem)] sm:max-w-full object-contain rounded-lg sm:rounded-xl shadow-2xl border border-white/10">
+
+            <button type="button" id="nextSlideBtn" class="absolute right-0 sm:-right-2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-l-full sm:rounded-full bg-black/75 sm:bg-white/10 hover:bg-black/90 sm:hover:bg-white/30 text-white backdrop-blur-md border-y border-l sm:border border-white/20 transition-all flex items-center justify-center shadow-2xl active:scale-95" title="Slide sau" aria-label="Slide sau">
+                <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6 -mr-0.5 sm:mr-0"></i>
+            </button>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="text-center text-[11px] sm:text-xs text-slate-400 max-w-7xl mx-auto w-full px-3 sm:px-0 pt-2">
+            Chương trình truyền hình "NÔNG DÂN SỐ" • Bản quyền Đài Truyền hình Việt Nam (VTV) &amp; Sài Gòn Phim
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <img src="assets/images/logo_nong_dan_so_transparent.png" alt="Logo Nông Dân Số" class="h-12 w-auto object-contain">
+                    <div>
+                        <span class="block text-sm font-bold text-white">NÔNG DÂN SỐ</span>
+                        <span class="block text-[10px] text-emerald-400">Công nghệ đồng hành – Nông dân vươn xa</span>
+                    </div>
+                </div>
+                <div class="text-center sm:text-right text-[11px] text-slate-400">
+                    Sản xuất bởi <strong class="text-slate-200">Công ty Cổ phần Công nghệ Truyền hình Sài Gòn Phim</strong>
+                    <br>Phát sóng trên <strong class="text-emerald-400">Kênh Đài Truyền hình Việt Nam</strong>
+                </div>
+            </div>
+            <div class="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
+                <div>© 2026 NÔNG DÂN SỐ. Tất cả quyền được bảo lưu.</div>
+                <div>Website chính thức: <a href="http://truyenhinhnongnghiep.vn" target="_blank" class="text-emerald-400 hover:underline">truyenhinhnongnghiep.vn</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP BUTTON -->
+    <button type="button" id="scrollToTopBtn" aria-label="Cuộn lên đầu trang" title="Cuộn lên đầu trang"
+        class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white shadow-2xl opacity-0 pointer-events-none transition-all duration-300 transform translate-y-4 hover:scale-110 flex items-center justify-center focus:outline-none">
+        <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
