@@ -255,11 +255,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElem = document.querySelector(targetId);
             if (targetElem) {
                 e.preventDefault();
-                // If it is sponsorship section, sync top player to slide 17
+                // Sync top player if sponsorship or media ecosystem section
                 if (targetId === '#cat-goi-tai-tro') {
                     updatePlayer(17);
+                } else if (targetId === '#cat-he-sinh-thai') {
+                    updatePlayer(10);
                 }
-                const headerOffset = 175;
+                const headerOffset = window.innerWidth >= 768 ? 175 : 60;
                 const elementPosition = targetElem.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
